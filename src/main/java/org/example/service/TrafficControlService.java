@@ -44,12 +44,18 @@ public class TrafficControlService {
 
     public void filterByVehicleTypeAndStatus(String vehicleType, String status){
         System.out.println("Vehicle Type : " + vehicleType);
+        System.out.println(" ");
         System.out.println("\nVehicle Status : " + status);
         vehicles.stream()
                 .filter(v -> v.getVehicleType().equals(vehicleType) && v.getVehicleStatus() == VehicleStatus.ACTIVE)
                 .forEach(System.out::println);
-
-
     }
 
+//    public void sortVehicles() {
+//        return vehicles.stream()
+//                .sorted(Comparator.comparingInt(Vehicle::getOwnerCity).reversed()  //nu merge ca nu e int
+//                        .thenComparing(Vehicle::getId))
+//                .collect(Collectors.toList());
+//
+//    }
 }

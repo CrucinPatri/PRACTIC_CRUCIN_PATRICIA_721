@@ -17,10 +17,17 @@ public class TraficControlController {
         System.out.println("\n--- TASK 2 ---");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Input VehicleType: ");
+        System.out.println(" ");
         System.out.print("Input VehicleStatus: ");
         String v = scanner.nextLine();
+        String t = scanner.nextLine();
 
-        trafficControlService.filterByVehicleTypeAndStatus(v);
+        trafficControlService.filterByVehicleTypeAndStatus(v, t);
+
+
+        System.out.println("\n--- TASK 3 ---");
+        //trafficControlService.printAllVehicles();
+
     }
 
 }
