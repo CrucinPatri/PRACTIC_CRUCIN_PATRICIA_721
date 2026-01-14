@@ -42,6 +42,14 @@ public class TrafficControlService {
         }
     }
 
-    //public void filterByVehicleTypeAndStatus
+    public void filterByVehicleTypeAndStatus(String vehicleType, String status){
+        System.out.println("Vehicle Type : " + vehicleType);
+        System.out.println("\nVehicle Status : " + status);
+        vehicles.stream()
+                .filter(v -> v.getVehicleType().equals(vehicleType) && v.getVehicleStatus() == VehicleStatus.ACTIVE)
+                .forEach(System.out::println);
+
+
+    }
 
 }
