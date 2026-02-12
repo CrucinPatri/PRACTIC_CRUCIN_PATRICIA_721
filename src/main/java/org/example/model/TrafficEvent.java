@@ -1,8 +1,13 @@
 package org.example.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class TrafficEvent {
     private int id;
-    private int vehicle;
+
+    @JsonProperty("vehicleId") // Asta rezolvă eroarea din consolă!
+    private int vehicleId;
+
     private EventType type;
     private int severity;
     private int timeSlot;
@@ -12,8 +17,8 @@ public class TrafficEvent {
     public int getId(){return id;}
     public void setId(int id){this.id=id;}
 
-    public int getVehicle(){return vehicle;}
-    public void setVehicle(int vehicle){this.vehicle=vehicle;}
+    public int getVehicleId(){return vehicleId;}
+    public void setVehicleId(int vehicleId){this.vehicleId=vehicleId;}
 
     public EventType getType(){return type;}
     public void setType(EventType type){this.type=type;}
@@ -23,6 +28,15 @@ public class TrafficEvent {
 
     public int getTimeSlot(){return timeSlot;}
     public void setTimeSlot(int timeSlot){this.timeSlot=timeSlot;}
+
+    public int calculateRiskScore() {
+        return switch (this.type) {
+            case SPEEDING -> severity * 2;
+            case RED_LIGHT -> severity * 3;
+            case ACCIDENT -> severity * 5;
+            case PRIORITY_PASS -> severity * 1;
+        };
+    }
 }
 
 

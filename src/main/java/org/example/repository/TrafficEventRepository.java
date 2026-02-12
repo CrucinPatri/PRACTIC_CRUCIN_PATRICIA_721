@@ -11,11 +11,11 @@ import java.util.List;
 
 public class TrafficEventRepository {
     private final ObjectMapper mapper = new ObjectMapper();
-    public List<TrafficEvent> loadTrafficEvents(String filePath){
-        try{
-            return mapper.readValue(new File(filePath), new TypeReference<List<TrafficEvent>>(){});
-        }catch(IOException e){
-            e.printStackTrace();
+
+    public List<TrafficEvent> loadTrafficEvents(String filePath) {
+        try {
+            return mapper.readValue(new File(filePath), new TypeReference<>() {});
+        } catch (IOException e) {
             return new ArrayList<>();
         }
     }

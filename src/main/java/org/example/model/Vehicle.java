@@ -3,9 +3,9 @@ package org.example.model;
 public class Vehicle {
     private int id;
     private String licensePlate;
-    private VehicleType vehicleType;
+    private VehicleType type;
     private String ownerCity;
-    private VehicleStatus vehicleStatus;
+    private VehicleStatus status;
 
     public Vehicle() {}
 
@@ -15,12 +15,17 @@ public class Vehicle {
     public String getLicensePlate() {return licensePlate;}
     public void setLicensePlate(String licensePlate) {this.licensePlate = licensePlate;}
 
-    public VehicleType getVehicleType() {return vehicleType;}
-    public void setVehicleType(VehicleType vehicleType) {this.vehicleType = vehicleType;}
+    public VehicleType getType() {return type;}
+    public void setType(VehicleType type) {this.type = type;}
 
     public String getOwnerCity() {return ownerCity;}
     public void setOwnerCity(String ownerCity) {this.ownerCity = ownerCity;}
 
-    public VehicleStatus getVehicleStatus() {return vehicleStatus;}
-    public void setVehicleStatus(VehicleStatus vehicleStatus) {this.vehicleStatus = vehicleStatus;}
+    public VehicleStatus getStatus() {return status;}
+    public void setStatus(VehicleStatus status) {this.status = status;}
+
+    @Override
+    public String toString() {
+        return "[" + id + "] " + licensePlate + " | " + type + " | " + status + " | city=" + ownerCity;
+    }
 }

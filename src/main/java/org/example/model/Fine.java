@@ -2,7 +2,7 @@ package org.example.model;
 
 public class Fine {
     private int id;
-    private int vehicle;
+    private int vehicleId;
     private FineReason reason;
     private int amount;
     private int timeSlot;
@@ -12,8 +12,8 @@ public class Fine {
     public int getId(){return id;}
     public void setId(int id){this.id=id;}
 
-    public int getVehicle(){return vehicle;}
-    public void setVehicle(int vehicle){this.vehicle=vehicle;}
+    public int getVehicleId(){return vehicleId;}
+    public void setVehicleId(int vehicleId){this.vehicleId = vehicleId;}
 
     public FineReason getReason(){return reason;}
     public void setReason(FineReason reason){this.reason=reason;}
